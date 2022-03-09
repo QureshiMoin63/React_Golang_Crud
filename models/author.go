@@ -100,6 +100,7 @@ func DeleteAuthor(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Please Enter Integer")
 	} else {
 		DB.Delete(&author, params["id"])
-		json.NewEncoder(w).Encode("The Author Has been successfully deleted")
+		fmt.Fprintf(w, "The Author Has been successfully deleted")
+
 	}
 }
