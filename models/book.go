@@ -120,11 +120,4 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// for index, item := range author {
-// 	if item.id == params["id"] {
-// 		DB.Delete(&author, params["id"])
-// 		json.NewEncoder(w).Encode("The Author Has been successfully deleted")
-// 	} else {
-// 		fmt.Printf("Please Enter Correct params")
-// 	}
-// }
+
