@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a Service for Managing Books",
+        "title": "Books API",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/books": {
+            "get": {
+                "description": "Get All Books based on the request",
+                "responses": {}
+            }
+        },
+        "/books/create": {
+            "post": {
+                "description": "Creates Books \u0026 Returns a Book based on the request",
+                "parameters": [
+                    {
+                        "description": "Create Book Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models._Book"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/books/{id}": {
+            "get": {
+                "description": "Get Books by ID based on the request",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Get Books by ID Request",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "delete": {
+                "description": "Delete Books based on the request",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delete Book Request",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "patch": {
+                "description": "Update Books based on the request",
+                "parameters": [
+                    {
+                        "description": "Update Book Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models._Book"
+                        }
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Update Book Request",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "models._Book": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+basePath: /
+definitions:
+  models._Book:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a Service for Managing Books
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Books API
+  version: "1.0"
+paths:
+  /books:
+    get:
+      description: Get All Books based on the request
+      responses: {}
+  /books/{id}:
+    delete:
+      description: Delete Books based on the request
+      parameters:
+      - description: Delete Book Request
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses: {}
+    get:
+      description: Get Books by ID based on the request
+      parameters:
+      - description: Get Books by ID Request
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses: {}
+    patch:
+      description: Update Books based on the request
+      parameters:
+      - description: Update Book Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models._Book'
+      - description: Update Book Request
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses: {}
+  /books/create:
+    post:
+      description: Creates Books & Returns a Book based on the request
+      parameters:
+      - description: Create Book Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models._Book'
+      responses: {}
+swagger: "2.0"
